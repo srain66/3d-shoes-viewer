@@ -1,5 +1,5 @@
 import { OrbitControls } from "@react-three/drei";
-import { Canvas, CanvasProps } from "@react-three/fiber";
+import { Canvas } from "@react-three/fiber";
 
 export function Viewer(): JSX.Element {
   return (
