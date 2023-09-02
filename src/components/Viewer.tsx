@@ -1,3 +1,4 @@
+import { OrbitControls } from "@react-three/drei";
 import { Canvas, CanvasProps } from "@react-three/fiber";
 
 export function Viewer(): JSX.Element {
@@ -8,6 +9,7 @@ export function Viewer(): JSX.Element {
       <mesh>
         <boxGeometry args={[1, 1, 1]} />
       </mesh>
+      <OrbitControls />
     </Canvas>
   );
 }
