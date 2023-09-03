@@ -1,3 +1,4 @@
+import ResetButton from "@/components/ResetButton";
 import Toolbar from "@/components/Toolbar";
 import Viewer from "@/components/Viewer";
 import { Canvas } from "@react-three/fiber";
@@ -8,8 +9,14 @@ export default function Home() {
   const defaultPosition = useMemo(() => new Vector3(30, 40, 60), []);
 
   const [height, setHeight] = useState<number>();
+  const [hasMoved, setHasMoved] = useState<boolean>(false);
 
   const handleHeightChange = (current: number) => setHeight(current);
+  const handleStart = () => setHasMoved(true);
+
+  const handleClick = () => {
+    setHasMoved(false);
+  };
 
   return (
     <div className="w-screen h-screen">
@@ -18,10 +25,11 @@ export default function Home() {
           className="w-full h-full"
           camera={{ position: defaultPosition }}
         >
-          <Viewer />
+          <Viewer onStart={handleStart} />
         </Canvas>
       </div>
       <Toolbar onHeightChange={handleHeightChange} />
+      <ResetButton active={hasMoved} onClick={handleClick} />
     </div>
   );
 }

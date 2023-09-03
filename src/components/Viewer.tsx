@@ -1,10 +1,10 @@
 import { OrbitControls } from "@react-three/drei";
-import { useState } from "react";
 
-export default function Viewer(): JSX.Element {
-  const [_hasMoved, setHasMoved] = useState(false);
-  const handleChange = () => setHasMoved(true);
+interface IProps {
+  onStart: () => void;
+}
 
+export default function Viewer({ onStart }: IProps): JSX.Element {
   return (
     <>
       <ambientLight />
@@ -12,7 +12,7 @@ export default function Viewer(): JSX.Element {
       <mesh>
         <boxGeometry args={[1, 1, 1]} />
       </mesh>
-      <OrbitControls onChange={handleChange} />
+      <OrbitControls onStart={onStart} />
     </>
   );
 }
