@@ -1,7 +1,7 @@
 import Display from "@/components/Display";
 import Tools from "@/components/Tools";
 import { Canvas } from "@react-three/fiber";
-import { HTMLAttributes, useMemo, useState } from "react";
+import { HTMLAttributes, useMemo } from "react";
 import { Vector3 } from "three";
 
 interface IProps extends HTMLAttributes<HTMLDivElement> {}
