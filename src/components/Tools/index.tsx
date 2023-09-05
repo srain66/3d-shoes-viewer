@@ -2,21 +2,12 @@ import { useEffect, useRef } from "react";
 import ResetButton from "./ResetButton";
 
 interface IProps {
-  onHeightChange: (current: number) => void;
   active: boolean;
   onClick: () => void;
 }
 
-export default function Tools({
-  onHeightChange,
-  active,
-  onClick,
-}: IProps): JSX.Element {
+export default function Tools({ active, onClick }: IProps): JSX.Element {
   const ref = useRef<HTMLDivElement>(null!);
-
-  useEffect(() => {
-    onHeightChange(ref.current.clientHeight);
-  });
 
   return (
     <>
