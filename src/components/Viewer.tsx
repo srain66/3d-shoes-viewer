@@ -14,7 +14,7 @@ export default function Viewer({ ...props }: IProps): JSX.Element {
       <Canvas camera={{ position: defaultPosition }}>
         <Display />
       </Canvas>
-      <Tools active={false} onClick={() => {}} />
+      <Tools />
     </div>
   );
 }

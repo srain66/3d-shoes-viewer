@@ -5,10 +5,7 @@ import { useViewerDispatch, useViewerState } from "@/hooks/useViewer";
 
 interface IProps extends HTMLAttributes<HTMLButtonElement> {}
 
-export default function ResetButton({
-  onClick,
-  ...props
-}: IProps): JSX.Element {
+export default function ResetButton({ ...props }: IProps): JSX.Element {
   const { displayMoved, controlsRef } = useViewerState();
   const { setDisplayMoved } = useViewerDispatch();
 
