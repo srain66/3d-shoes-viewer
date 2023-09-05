@@ -1,5 +1,5 @@
 import Display from "@/components/Display";
-import ResetButton from "@/components/ResetButton";
+import ResetButton from "@/components/Tools/ResetButton";
 import Tools from "@/components/Tools";
 import { Canvas } from "@react-three/fiber";
 import { HTMLAttributes, useMemo, useState } from "react";
@@ -25,8 +25,11 @@ export default function Viewer({ ...props }: IProps): JSX.Element {
       <Canvas camera={{ position: defaultPosition }}>
         <Display onStart={handleStart} />
       </Canvas>
-      <Tools onHeightChange={handleHeightChange} />
-      <ResetButton active={hasMoved} onClick={handleClick} />
+      <Tools
+        onHeightChange={handleHeightChange}
+        active={hasMoved}
+        onClick={handleClick}
+      />
     </div>
   );
 }
