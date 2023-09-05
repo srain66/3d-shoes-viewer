@@ -12,7 +12,7 @@ export default function Tools({ onHeightChange }: IProps): JSX.Element {
   });
 
   return (
-    <div ref={ref} className="w-full fixed bottom-0 left-0 p-2 px-4">
+    <div ref={ref} className="w-full p-2 px-4">
       toolbar
     </div>
   );
