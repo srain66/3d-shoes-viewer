@@ -1,3 +1,4 @@
+import Layout from "@/components/Layout";
 import ResetButton from "@/components/ResetButton";
 import Toolbar from "@/components/Toolbar";
 import Viewer from "@/components/Viewer";
@@ -19,7 +20,7 @@ export default function Home() {
   };
 
   return (
-    <div className="w-screen h-screen">
+    <Layout className="w-screen h-screen">
       <div className="W-full h-full" style={{ paddingBottom: height }}>
         <Canvas
           className="w-full h-full"
@@ -30,6 +31,6 @@ export default function Home() {
       </div>
       <Toolbar onHeightChange={handleHeightChange} />
       <ResetButton active={hasMoved} onClick={handleClick} />
-    </div>
+    </Layout>
   );
 }
