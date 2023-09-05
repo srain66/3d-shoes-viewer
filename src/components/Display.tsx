@@ -1,18 +1,16 @@
 import { OrbitControls } from "@react-three/drei";
 
-interface IProps {
-  onStart: () => void;
-}
+interface IProps {}
 
-export default function Display({ onStart }: IProps): JSX.Element {
+export default function Display({}: IProps): JSX.Element {
   return (
     <>
       <ambientLight />
       <pointLight />
       <mesh>
-        <boxGeometry args={[1, 1, 1]} />
+        <boxGeometry args={[10, 10, 10]} />
       </mesh>
-      <OrbitControls onStart={onStart} />
+      <OrbitControls />
     </>
   );
 }
