@@ -4,7 +4,7 @@ interface IProps {
   onHeightChange: (current: number) => void;
 }
 
-export default function Toolbar({ onHeightChange }: IProps): JSX.Element {
+export default function Tools({ onHeightChange }: IProps): JSX.Element {
   const ref = useRef<HTMLDivElement>(null!);
 
   useEffect(() => {

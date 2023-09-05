@@ -1,7 +1,7 @@
 import Display from "@/components/Display";
 import Layout from "@/components/Layout";
 import ResetButton from "@/components/ResetButton";
-import Toolbar from "@/components/Toolbar";
+import Tools from "@/components/Tools";
 import { Canvas } from "@react-three/fiber";
 import { useMemo, useState } from "react";
 import { Vector3 } from "three";
@@ -29,7 +29,7 @@ export default function Home() {
           <Display onStart={handleStart} />
         </Canvas>
       </div>
-      <Toolbar onHeightChange={handleHeightChange} />
+      <Tools onHeightChange={handleHeightChange} />
       <ResetButton active={hasMoved} onClick={handleClick} />
     </Layout>
   );
