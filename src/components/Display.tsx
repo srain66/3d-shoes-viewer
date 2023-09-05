@@ -4,7 +4,7 @@ interface IProps {
   onStart: () => void;
 }
 
-export default function Viewer({ onStart }: IProps): JSX.Element {
+export default function Display({ onStart }: IProps): JSX.Element {
   return (
     <>
       <ambientLight />
