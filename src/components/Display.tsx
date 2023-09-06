@@ -7,6 +7,12 @@ export default function Display({}: IProps): JSX.Element {
   const { setDisplayMoved } = useViewerDispatch();
   const { controlsRef } = useViewerState();
 
+  const handleStart = () => {
+    setTimeout(() => {
+      setDisplayMoved(true);
+    }, 1000);
+  };
+
   return (
     <>
       <ambientLight />
@@ -14,7 +20,7 @@ export default function Display({}: IProps): JSX.Element {
       <mesh>
         <boxGeometry args={[10, 10, 10]} />
       </mesh>
-      <OrbitControls ref={controlsRef} onStart={() => setDisplayMoved(true)} />
+      <OrbitControls ref={controlsRef} onStart={handleStart} />
     </>
   );
 }
