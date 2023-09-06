@@ -1,5 +1,7 @@
 import { useViewerDispatch, useViewerState } from "@/hooks/useViewer";
-import { OrbitControls } from "@react-three/drei";
+import { Center, Environment, OrbitControls } from "@react-three/drei";
+import Shoes from "./Shoes";
+import { Suspense } from "react";
 
 interface IProps {}
 
@@ -14,13 +16,14 @@ export default function Display({}: IProps): JSX.Element {
   };
 
   return (
-    <>
+    <Suspense fallback={null}>
       <ambientLight />
       <pointLight />
-      <mesh>
-        <boxGeometry args={[10, 10, 10]} />
-      </mesh>
+      <Center rotation={[0, 2.5, 0]}>
+        <Shoes />
+      </Center>
       <OrbitControls ref={controlsRef} onStart={handleStart} />
-    </>
+      <Environment preset="warehouse" />
+    </Suspense>
   );
 }
