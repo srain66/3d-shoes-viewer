@@ -5,7 +5,6 @@ import { MetalColor } from "@/interfaces/Colors";
 
 interface IProps {
   title: string;
-  name: string;
   color: string;
   options: string[];
   onChange: (value: string) => void;
@@ -13,7 +12,6 @@ interface IProps {
 
 export default function PartColorOptions({
   title,
-  name,
   color,
   options,
   onChange,
@@ -31,16 +29,6 @@ export default function PartColorOptions({
           style={{ background: color }}
           onClick={handleToggle}
         ></div>
-        {/* <div
-        title={title}
-        className="w-auto h-8 p-1 flex items-center justify-between rounded-full bg-gray-100 cursor-pointer"
-        onClick={() => setOpen(true)}
-      >
-        <span
-          className="w-6 h-6 block rounded-full outline outline-white"
-          style={{ background: color }}
-        ></span>
-      </div> */}
         {open && (
           <>
             <ul className="absolute bottom-12 -left-4 w-16 h-auto z-20 bg-white drop-shadow-xl rounded p-4 flex flex-col gap-2">

@@ -19,17 +19,6 @@ export default function SelectColor({}: IProps): JSX.Element {
   return (
     <div className="flex items-center gap-4 w-full">
       <ResetColorButton />
-      {/* <div
-        className={"rounded-full bg-red-500 p-0.5"}
-        style={{
-          backgroundColor: "#00DBDE",
-          backgroundImage: `linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%)`,
-        }}
-      >
-        <span className="rounded-full block p-2 text-3xl bg-white">
-          <FaPalette />
-        </span>
-      </div> */}
 
       <div className="relative flex items-center justify-start gap-2 w-full">
         <PartGroup name="Background">
@@ -67,21 +56,18 @@ export default function SelectColor({}: IProps): JSX.Element {
         <PartGroup name="Acc">
           <PartColorOptions
             title="금속 색상"
-            name="metal"
             color={colors.metal}
             options={Object.values(MetalColor)}
             onChange={(value) => handleChange({ metal: value as MetalColor })}
           />
           <PartColorOptions
             title="끈 색상"
-            name="lace"
             color={colors.lace}
             options={Object.values(LaceColor)}
             onChange={(value) => handleChange({ lace: value as LaceColor })}
           />
           <PartColorOptions
             title="밑창 색상"
-            name="sole"
             color={colors.sole}
             options={Object.values(SoleColor)}
             onChange={(value) => handleChange({ sole: value as SoleColor })}
