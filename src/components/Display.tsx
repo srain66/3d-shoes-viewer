@@ -7,7 +7,7 @@ interface IProps {}
 
 export default function Display({}: IProps): JSX.Element {
   const { setDisplayMoved } = useViewerDispatch();
-  const { controlsRef } = useViewerState();
+  const { controlsRef, colors } = useViewerState();
 
   const handleStart = () => {
     setTimeout(() => {
@@ -17,6 +17,7 @@ export default function Display({}: IProps): JSX.Element {
 
   return (
     <Suspense fallback={null}>
+      <color attach="background" args={[colors.background]} />
       <ambientLight />
       <pointLight />
       <Center rotation={[0, 2.5, 0]}>
