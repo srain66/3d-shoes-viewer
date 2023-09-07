@@ -23,7 +23,13 @@ export default function Display({}: IProps): JSX.Element {
       <Center rotation={[0, 2.5, 0]}>
         <Shoes />
       </Center>
-      <OrbitControls ref={controlsRef} onStart={handleStart} />
+      <OrbitControls
+        ref={controlsRef}
+        onStart={handleStart}
+        enablePan={false}
+        minDistance={20}
+        maxDistance={140}
+      />
       <Environment preset="warehouse" />
     </Suspense>
   );

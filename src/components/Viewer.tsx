@@ -8,7 +8,7 @@ import { Vector3 } from "three";
 interface IProps extends HTMLAttributes<HTMLDivElement> {}
 
 export default function Viewer({ ...props }: IProps): JSX.Element {
-  const defaultPosition = useMemo(() => new Vector3(30, 40, 60), []);
+  const defaultPosition = useMemo(() => new Vector3(20, 30, 50), []);
   const { canvasRef } = useViewerState();
 
   return (
