@@ -5,6 +5,7 @@ import { FaPalette } from "react-icons/fa";
 import PartColorPicker from "./PartColorPicker";
 import PartColorOptions from "./PartColorOptions";
 import PartGroup from "./PartGroup";
+import ResetColorButton from "./ResetColorButton";
 
 interface IProps {}
 
@@ -17,7 +18,8 @@ export default function SelectColor({}: IProps): JSX.Element {
 
   return (
     <div className="flex items-center gap-4 w-full">
-      <div
+      <ResetColorButton />
+      {/* <div
         className={"rounded-full bg-red-500 p-0.5"}
         style={{
           backgroundColor: "#00DBDE",
@@ -27,7 +29,7 @@ export default function SelectColor({}: IProps): JSX.Element {
         <span className="rounded-full block p-2 text-3xl bg-white">
           <FaPalette />
         </span>
-      </div>
+      </div> */}
 
       <div className="relative flex items-center justify-start gap-2 w-full">
         <PartGroup name="Background">
