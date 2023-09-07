@@ -1,6 +1,5 @@
 import { HTMLAttributes } from "react";
 import { BiSolidColor } from "react-icons/bi";
-import cls from "classnames";
 
 interface IProps extends HTMLAttributes<HTMLButtonElement> {}
 

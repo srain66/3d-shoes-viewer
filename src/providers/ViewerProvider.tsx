@@ -3,7 +3,7 @@ import {
   ViewerStateContext,
 } from "@/contexts/ViewerContext";
 import { Colors, LaceColor, MetalColor, SoleColor } from "@/interfaces/Colors";
-import { ReactNode, useRef, useState } from "react";
+import { ReactNode, useEffect, useRef, useState } from "react";
 import { OrbitControls as OrbitControlsImpl } from "three-stdlib";
 
 interface IProps {
