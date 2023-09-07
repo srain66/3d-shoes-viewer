@@ -19,7 +19,7 @@ export default function Display({}: IProps): JSX.Element {
     <Suspense fallback={null}>
       <color attach="background" args={[colors.background]} />
       <ambientLight />
-      <pointLight />
+      <pointLight intensity={100} distance={10} />
       <Center rotation={[0, 2.5, 0]}>
         <Shoes />
       </Center>
