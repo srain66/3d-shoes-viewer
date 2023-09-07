@@ -6,7 +6,9 @@ import { Suspense } from "react";
 interface IProps extends GroupProps {}
 
 export default function Shoes({ ...props }: IProps): JSX.Element {
-  const { nodes } = useGLTF("/assets/shoes.glb") as ShoesModelGLTFResult;
+  const { nodes } = useGLTF(
+    `${process.env.NEXT_PUBLIC_ASSET_URL}/assets/shoes.glb`
+  ) as ShoesModelGLTFResult;
 
   return (
     <Suspense fallback={null}>
@@ -69,4 +71,4 @@ export default function Shoes({ ...props }: IProps): JSX.Element {
   );
 }
 
-useGLTF.preload("/assets/shoes.glb");
+useGLTF.preload(`${process.env.NEXT_PUBLIC_ASSET_URL}/assets/shoes.glb`);
