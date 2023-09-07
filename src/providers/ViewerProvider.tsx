@@ -10,11 +10,12 @@ interface IProps {
 }
 
 export default function ViewerProvider({ children }: IProps): JSX.Element {
+  const canvasRef = useRef<HTMLCanvasElement>(null!);
   const controlsRef = useRef<OrbitControlsImpl>(null!);
 
   const [displayMoved, setDisplayMoved] = useState<boolean>(false);
 
-  const stateValue = { controlsRef, displayMoved };
+  const stateValue = { canvasRef, controlsRef, displayMoved };
   const dispatchValue = { setDisplayMoved };
 
   return (

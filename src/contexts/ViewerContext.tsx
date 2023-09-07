@@ -7,6 +7,7 @@ import {
 import { OrbitControls as OrbitControlsImpl } from "three-stdlib";
 
 export interface ViewerState {
+  canvasRef: MutableRefObject<HTMLCanvasElement>;
   controlsRef: MutableRefObject<OrbitControlsImpl>;
   displayMoved: boolean;
 }
@@ -15,6 +16,7 @@ export interface ViewerDispatch {
 }
 
 export const ViewerStateContext = createContext<ViewerState>({
+  canvasRef: null!,
   controlsRef: null!,
   displayMoved: null!,
 });
