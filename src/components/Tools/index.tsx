@@ -9,7 +9,7 @@ export default function Tools({}: IProps): JSX.Element {
 
   return (
     <>
-      <div ref={ref} className="w-full p-2 flex items-center">
+      <div ref={ref} className="w-full p-4 flex items-center">
         <div>Toolbar</div>
         <div className="flex-none ml-auto">
           <CaptureButton />

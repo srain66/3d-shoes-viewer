@@ -13,7 +13,7 @@ export default function CaptureButton({ ...props }: IProps): JSX.Element {
     <button
       onClick={handleClick}
       {...props}
-      className="flex items-center gap-2 p-2 px-4 rounded bg-sky-500 text-white hover:bg-sky-700 hover:text-sky-100"
+      className="flex items-center gap-2 p-3 px-4 rounded bg-sky-500 text-white hover:bg-sky-700 hover:text-sky-100"
     >
       <AiFillCamera className="text-2xl" />
       CAPTURE
