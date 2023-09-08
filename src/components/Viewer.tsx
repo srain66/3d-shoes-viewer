@@ -17,6 +17,7 @@ export default function Viewer({ ...props }: IProps): JSX.Element {
         ref={canvasRef}
         camera={{ position: defaultPosition }}
         gl={{ preserveDrawingBuffer: true }}
+        style={{ cursor: "grab" }}
       >
         <Display />
       </Canvas>
