@@ -16,7 +16,6 @@ export interface ViewerState {
 export interface ViewerDispatch {
   setColors: Dispatch<SetStateAction<Colors>>;
   setDisplayMoved: Dispatch<SetStateAction<boolean>>;
-  resetColors: () => void;
 }
 
 export const ViewerStateContext = createContext<ViewerState>({
@@ -29,5 +28,4 @@ export const ViewerStateContext = createContext<ViewerState>({
 export const ViewerDispatchContext = createContext<ViewerDispatch>({
   setColors: () => {},
   setDisplayMoved: () => {},
-  resetColors: () => {},
 });

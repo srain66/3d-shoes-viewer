@@ -1,25 +1,28 @@
-import { useViewerDispatch } from "@/hooks/useViewer";
-import { HTMLAttributes } from "react";
-import { BiSolidColor } from "react-icons/bi";
+import { useViewerDispatch, useViewerState } from "@/hooks/useViewer";
+import { defaultColors } from "@/providers/ViewerProvider";
+import { HTMLAttributes, useMemo } from "react";
+import { RxReset } from "react-icons/rx";
+import cls from "classnames";
 
 interface IProps extends HTMLAttributes<HTMLButtonElement> {}
 
 export default function ResetColorButton({ ...props }: IProps): JSX.Element {
-  const { resetColors } = useViewerDispatch();
+  const { colors } = useViewerState();
+  const { setColors } = useViewerDispatch();
+  const handleClick = () => setColors(defaultColors);
+
+  const active: boolean = useMemo(() => colors !== defaultColors, [colors]);
 
   return (
     <button
-      className={"rounded-full bg-red-500 p-0.5"}
-      style={{
-        backgroundColor: "#00DBDE",
-        backgroundImage: `linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%)`,
-      }}
-      onClick={resetColors}
+      className={cls(
+        "w-10 h-10 flex items-center justify-center bg-gray-100 rounded-full hover:bg-gray-200 text-xl",
+        active ? "visible" : "invisible"
+      )}
+      onClick={handleClick}
       {...props}
     >
-      <span className="rounded-full block p-2 text-3xl bg-white hover:bg-gray-100">
-        <BiSolidColor />
-      </span>
+      <RxReset />
     </button>
   );
 }
