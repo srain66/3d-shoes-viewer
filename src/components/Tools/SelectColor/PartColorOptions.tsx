@@ -31,7 +31,7 @@ export default function PartColorOptions({
         ></div>
         {open && (
           <>
-            <ul className="absolute bottom-12 -left-4 w-16 h-auto z-20 bg-white drop-shadow-xl rounded p-4 flex flex-col gap-2">
+            <ul className="absolute bottom-12 -left-4 w-16 h-auto z-20 bg-white drop-shadow-xl rounded p-4 flex flex-col gap-3">
               {options.map((option: string) => {
                 return (
                   <li
@@ -39,7 +39,7 @@ export default function PartColorOptions({
                     className={cls(
                       "w-8 h-8 rounded-full cursor-pointer",
                       option === color &&
-                        "outline outline-gray-500 outline-offset-1"
+                        "outline outline-1 outline-gray-500 outline-offset-2"
                     )}
                     style={{ background: option }}
                     onClick={() => onChange(option)}
