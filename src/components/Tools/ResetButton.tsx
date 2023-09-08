@@ -18,7 +18,7 @@ export default function ResetButton({ ...props }: IProps): JSX.Element {
     <button
       title="Reset Camera"
       className={cls(
-        "fixed right-4  w-12 h-12 rounded-full transition text-xl flex justify-center items-center text-white bg-red-500 hover:bg-red-700 hover:text-red-100 transition-all duration-500",
+        "fixed right-4  w-12 h-12 rounded-full transition text-xl flex justify-center items-center bg-white drop-shadow hover:bg-red-500 hover:text-red-100 transition-all duration-300",
         displayMoved ? "top-4" : "-top-20"
       )}
       onClick={handleClick}
