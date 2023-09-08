@@ -15,13 +15,17 @@ export default function captureCanvas(
         (blob) => {
           if (!blob) return;
           const url = URL.createObjectURL(blob);
+          const confirmed = confirm(
+            "Captured! Would you like to save the file?"
+          );
+          if (!confirmed) return;
           const a = document.createElement("a");
           a.href = url;
           a.download = option.name ?? "image";
           a.click();
           URL.revokeObjectURL(url);
         },
-        option.extension ?? "image/jpeg",
+        option.extension ?? "image/png",
         1
       );
     })
